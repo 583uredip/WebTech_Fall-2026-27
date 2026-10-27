@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../Design/Style.css">
+<script src="../JS/script.js"> </script>
+<title>Student Registration Form</title>
+</head>
+
+<body>
+    <img src="logo.png" id="logo">
+    <br>
+    <iframe width="400" height="225" src="https://www.youtube.com/embed/WE7eh97w9Nk"
+    title="Aiub" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+</iframe>
+    <h1>Student Registration Form</h1>
+
+    <form onsubmit="return collet_data()">
+
+        <fieldset>
+            <legend>Student Personal Information</legend>
+
+            <table>
+
+            
+                <tr>
+                    <td>
+                        <label for="StudentName">Student Name:</label>
+                    </td>
+                    <td>
+                        <input type="text"
+                            name="StudentName"
+                            id="StudentName"
+                            placeholder="Enter Your Name"oninput="validateName()"
+                            required>
+                        <span id="NameError"></span>
+
+                    </td>
+                </tr>
+
+                <!-- Student Age -->
+                <tr>
+                    <td>
+                        <label for="Studentage">Student Age:</label>
+                    </td>
+                    <td>
+                        <input type="number"
+                        name="Studentage"
+                        id="Studentage"
+                        placeholder="Enter Your Age"oninput="validateAge()"
+                        required>
+                    <span id="AgeError"></span>
+
+                    </td>
+                </tr>
+
+                <!-- Student Email -->
+                <tr>
+                    <td>
+                        <label for="Studentemail">Student Email:</label>
+                    </td>
+                    <td>
+                        <input type="email"
+                        name="Studentemail"
+                        id="Studentemail"
+                        placeholder="Student Email"oninput="validateEmail()"
+                            required>
+                 <span id="EmailError"></span>
+
+                    </td>
+                </tr>
+
+                <!-- Gender -->
+                <tr>
+                    <td>
+                        <label>Gender:</label>
+                    </td>
+                    <td>
+                        <input type="radio"
+                        name="gender"
+                        id="Male"
+                        value="Male"onchange="validateGender()">
+
+                        <label for="Male">Male</label>
+
+                        <input type="radio"
+                        name="gender"
+                        id="Female"
+                        value="Female"onchange="validateGender()">
+
+                        <label for="Female">Female</label>
+                                                <span id="GenderError"></span>
+
+                    </td>
+                </tr>
+
+                <!-- Student History -->
+                <tr>
+                    <td>
+                        <label for="stududoc">Student History:</label>
+                    </td>
+                    <td>
+                        <input type="file"
+                        name="file"
+                        id="stududoc"onchange="validateFile()">
+                                                <span id="FileError"></span>
+
+                    </td>
+                </tr>
+
+                <!-- DOB -->
+                <tr>
+                    <td>
+                        <label for="DOB">DOB:</label>
+                    </td>
+                    <td>
+                        <input type="date"
+                        name="DOB"
+                        id="DOB"onchange="validateDOB()">
+                    </td>
+                                            <span id="DOBError"></span>
+
+                </tr>
+
+                <!-- Address -->
+                <tr>
+                    <td>
+                        <label for="Address">Address:</label>
+                    </td>
+                    <td>
+                        <textarea name="Address"
+                        id="Address"
+                        cols="20"
+                        rows="5"
+                        style="resize:none;" oninput="validateAddress()"></textarea>
+                                                <span id="AddressError"></span>
+
+                    </td>
+                </tr>
+
+                <!-- Citizenship -->
+                <tr>
+                    <td>
+                        <label for="Citizen">Citizenship:</label>
+                    </td>
+
+                    <td>
+                        <select name="Citizen" id="Citizen" onchange="validateCitizen()">
+
+                            <option value="">
+                                Select Country
+                            </option>
+
+                            <option value="BD">
+                                Bangladesh
+                            </option>
+
+                            <option value="US">
+                                USA
+                            </option>
+
+                            <option value="JP">
+                                Japan
+                            </option>
+
+                            <option value="AUS">
+                                Australia
+                            </option>
+
+                            <option value="UK">
+                                UK
+                            </option>
+
+                        </select>
+                        <br>
+                                                <span id="CitizenError"></span>
+
+                    </td>
+                </tr>
+
+                <!-- Department -->
+                <tr>
+                    <td>
+                        <label>Choose Department:</label>
+                    </td>
+
+                    <td>
+
+                        <input type="checkbox"
+                               name="dept"
+                               id="CSE"
+                               value="CSE">
+
+                        <label for="CSE">CSE</label>
+
+
+                        <input type="checkbox"
+                               name="dept"
+                               id="EEE"
+                               value="EEE">
+
+                        <label for="EEE">EEE</label>
+
+
+                        <input type="checkbox"
+                               name="dept"
+                               id="BBA"
+                               value="BBA">
+
+                        <label for="BBA">BBA</label>
+                        <span id="DeptError"></span>
+
+                    </td>
+                </tr>
+
+            </table>
+
+        </fieldset>
+
+
+        <br>
+
+
+        <h3>Student Portal</h3>
+
+
+        <fieldset>
+
+            <table>
+
+                <!-- Username -->
+                <tr>
+                    <td>
+                        <label for="username">User Name:</label>
+                    </td>
+
+                    <td>
+                        <input type="text"
+                               name="username"
+                               id="username"oninput="validateUsername()">
+                    <span id="UsernameError"></span>
+                    </td>
+                </tr>
+
+
+                <!-- Password -->
+                <tr>
+                    <td>
+                        <label for="password">Password:</label>
+                    </td>
+
+                    <td>
+                        <input type="password"
+                         name="password"
+                               id="password"oninput="validatePassword()">
+                    </td>
+                                            <span id="PasswordError"></span>
+
+                </tr>
+
+            </table>
+
+        </fieldset>
+
+
+        <br>
+
+
+        <!-- Buttons -->
+        <input type="submit" id="submit" for="submit" value="Signup">
+<input type="reset" id="reset" for="reset">
+    </form>
+
+</body>
+
+</html>
